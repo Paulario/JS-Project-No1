@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100%;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 700px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    background-color: rgba(0,0,0, 0.1);
+}
+
+.wrap:first-child  {
+    margin-bottom: 1em;
+    height: 270px;
+}
+
+.result {
+    width: inherit;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: inherit;
+}
+
+.wrap .text {
+    padding: 1em;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+}
+
+.wrap.btns {
+    justify-content: center;
+    margin-bottom: 1em;
+    background: none;
+    border: none;
+}
+
+.fields {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    width: 100%;
+}
+
+.field-edit {
+    width: 100%;
+}
+
+.field-edit textarea {
+    resize: none;
+    padding: 1em;
+}
+
+#field-edit-area {
+    width: 80%;
+    height: 200px;
+}
+
+input[type="button"] {
+    text-transform: capitalize;
+    color: white;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+input[name="add"]  { background-color: tomato; }
+input[name="save"] { background-color: green; }
+input[name="style"]  { background-color: skyblue; }
+input[name="edit"] { background-color: gold; }
+.picker-color input[type="button"] { background-color: rgba(0,0,0,0.4); }
+
+.d-none {
+    display: none !important;
+}
+
+.field-style h3 {
+    font-size: 12px;
+}
+
+.box {
+    width: calc(100% / 3);
+    height: calc(100% / 3);
+    border: 2px solid white;
+}
+
+.color-container {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    flex-flow: row wrap;
+    /* border: 1px solid black; */
+}

@@ -10,21 +10,66 @@
 <body>
     <main class="main">
         <div class="wrap">
-            <p>Adipisicing deserunt impedit nam vitae enim.</p>
-            <p>Adipisicing deserunt impedit nam vitae enim.</p>
-            <p>Adipisicing deserunt impedit nam vitae enim.</p>
-            <p>Adipisicing deserunt impedit nam vitae enim.</p>
-            <p>Adipisicing deserunt impedit nam vitae enim.</p>
+            <div class="result">
+                <div class="text">
+                    <p>Adipisicing deserunt impedit nam vitae enim.</p>
+                    <p>Adipisicing deserunt impedit nam vitae enim.</p>
+                    <p>Adipisicing deserunt impedit nam vitae enim.</p>
+                    <p>Adipisicing deserunt impedit nam vitae enim.</p>
+                    <p>Adipisicing deserunt impedit nam vitae enim.</p>
+                </div>
+            </div>
         </div>
-        <div class="btns btns-functions">
+        <div class="wrap btns btns-functions">
             <input type="button" name="edit" value="edit">
             <input type="button" name="style" value="style">
         </div>
         <div class="wrap">
-            <textarea id="edit-area" name="editArea" cols="30" rows="10"></textarea>
-            <div class="btns btns-controllers">
-                <input type="button" name="add" value="add">
-                <input type="button" name="save" value="save">
+            <div class='fields'>
+                <div class='field-edit'>
+                    <textarea id="field-edit-area" name="editArea" cols="30" rows="10"></textarea>
+                    <div class="btns btns-controllers">
+                        <input type="button" name="add" value="add">
+                        <input type="button" name="save" value="save">
+                    </div>
+                </div>
+                <form class='field-style d-none' name="styleForm">
+                    <div class="picker picker-font-size">
+                        <h3>Font Size:</h3>
+                        <div class="radios">
+                            <label for="fz12"><input id="fz12" type="radio" value="12px" name="fzOpt" selected>12px</label>
+                            <label for="fz14"><input id="fz14" type="radio" value="14px" name="fzOpt">14px</label>
+                            <label for="fz16"><input id="fz16" type="radio" value="16px" name="fzOpt">16px</label>
+                            <label for="fz18"><input id="fz18" type="radio" value="18px" name="fzOpt">18px</label>
+                            <label for="fz20"><input id="fz20" type="radio" value="20px" name="fzOpt">20px</label>
+                        </div>
+                    </div>
+                    <div class="picker picker-font-family">
+                        <h3>Font Family</h3>
+                        <select id="ffSelect" name="ffSelect">
+                            <option value="Choose option" selected>Choose option</option>
+                            <option value="cursive">cursive</option>
+                            <option value="fantasy">fantasy</option>
+                            <option value="monospace">monospace</option>
+                            <option value="sans-serif">sans-serif</option>
+                        </select>
+                    </div>
+                    <div class="picker picker-color">
+                        <h3>Colors:</h3>
+                        <div class="radios">
+                            <input type="button" name="textColor" value="Text Color">
+                            <input type="button" name="backgroundColor" value="Background Color">
+                        </div>
+                    </div>
+                    <div class="picker picker-style">
+                        <h3>Font Size:</h3>
+                        <div class="checkboxes">
+                            <label for="fsBold"><input id="fsBold" type="checkbox" value="bold">Bold text</label>
+                            <label for="fsCursive"><input id="fsCursive" type="checkbox" value="italic">Cursive text</label>
+                        </div>
+                    </div>
+                </form>
+                <div class="color-container d-none"></div>
             </div>
         </div>
     </main>
