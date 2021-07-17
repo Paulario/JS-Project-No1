@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,9 +9,9 @@
 </head>
 <body>
     <main class="main">
-        <div class="wrap">
-            <div class="result">
-                <div class="text">
+        <div class="container">
+            <div class="field field-result">
+                <div class="field-result-text">
                     <p>Adipisicing deserunt impedit nam vitae enim.</p>
                     <p>Adipisicing deserunt impedit nam vitae enim.</p>
                     <p>Adipisicing deserunt impedit nam vitae enim.</p>
@@ -20,26 +20,102 @@
                 </div>
             </div>
         </div>
-        <div class="wrap btns btns-functions">
-            <input type="button" name="edit" value="edit">
-            <input type="button" name="style" value="style">
+        <div class="container btns btns-functions">
+            <input class="btn btn-edit" type="button" data-function="edit" value="edit">
+            <input class="btn btn-style" type="button" data-function="style" value="style">
         </div>
-        <div class="wrap">
-            <div class='fields'>
-                <div class='field-edit'>
-                    <textarea id="field-edit-area" name="editArea" cols="30" rows="10"></textarea>
+        <div class="container">
+            <div class='field-wrap'>
+                <div class='field field-edit'>
+                    <textarea name="editArea" cols="30" rows="10"></textarea>
                     <div class="btns btns-controllers">
-                        <input type="button" name="add" value="add">
-                        <input type="button" name="save" value="save">
+                        <input class="btn btn-add" data-function="add" type="button" name="add" value="add">
+                        <input class="btn btn-save" data-function="save" type="button" name="save" value="save">
+                    </div>
+                </div>
+                <div class="field field-add d-none">
+                    <form name="fieldAddRadios">
+                        <h2>Choose what you want:
+                            <div>
+                                <label for="tableOpt"><input name="generator" id="tableOpt" type="radio" value="table" checked>table</label>
+                                <label for="listOpt"><input name="generator" id="listOpt" type="radio" value="list">list</label>
+                            </div>
+                        </h2>
+                    </form>
+                    <div class='field-add-generator'>
+                        <form class="field-add-generator-table" name="tableGenerator">
+                            <div class="field-add-generator-input">
+                                <label for="count-TR">Count TR: 
+                                    <input name="countTR" id="count-TR" type="text" placeholder="Count TR" value="4">
+                                </label>
+                            </div>
+                            <div class="field-add-generator-input">
+                                <label for="count-TD">Count TD: <input name="countTD" id="count-TD" type="text" placeholder="Count TD" value="4"></label>
+                            </div>
+                            <h2>Add style to your table:</h3>
+                            <div class="field-add-generator-input">
+                                <label for="width-TD">Width of TD: <input name="widthTD" id="count-TR" type="text" placeholder="Count TR" value="40"></label>
+                            </div>
+                            <div class="field-add-generator-input">
+                                <label for="height-TD">Height of TD: <input name="heightTD" id="count-TR" type="text" placeholder="Count TR" value="40"></label>
+                            </div>
+                            <div class="field-add-generator-input">
+                                <label for="border-width">Width of border: <input name="borderWidth" id="border-width" type="text" value="1" placeholder="width"></label>
+                                <label for="border-style">Type of border: 
+                                    <select name="borderStyle" id="border-style" name="borderStyle">
+                                        <option value="solid" selected>solid</option>
+                                        <option value="dotted">dotted</option>
+                                        <option value="dashed">dashed</option>
+                                        <option value="double">double</option>
+                                        <option value="groove">groove</option>
+                                        <option value="inset">inset</option>
+                                        <option value="none">none</option>
+                                    </select>
+                                </label>
+                                <label for="border-color">Color of border: 
+                                    <select name="borderColor" id="border-color" name="borderColor">
+                                        <option value="black" selected>black</option>
+                                        <option value="white">white</option>
+                                        <option value="green">green</option>
+                                        <option value="red">red</option>
+                                        <option value="blue">blue</option>
+                                        <option value="violet">violet</option>
+                                        <option value="teal">teal</option>
+                                        <option value="yellow">yellow</option>
+                                        <option value="grey">grey</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <input type="button" class="btn btn-create-table" data-function="createTable" value="Create table">
+                            <input type="button" class="btn btn-back" data-function="back" value="Back">
+                        </form>
+                        <form class="field-add-generator-list d-none" name="listGenerator">
+                            <div class="field-add-generator-input">
+                                <label for="count-LI">Count LI: <input name="countLI" id="count-LI" type="text" placeholder="Count LI"></label>
+                            </div>
+                            <div class="field-add-generator-input">
+                                <label for="count-TD">Type of marks:
+                                    <select name="listMark" id="listMark" name="listMark">
+                                        <option value="circle" selected>circle</option>
+                                        <option value="disc">disc</option>
+                                        <option value="square">square</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <input type="button" class="btn btn-create-list" data-function="createList" value="Create list">
+                            <input type="button" class="btn btn-back" data-function="back" value="back">
+                        </form>
+                    </div>
+                    <div class="list-generator">
                     </div>
                 </div>
                 <form class='field-style d-none' name="styleForm">
                     <div class="picker picker-font-size">
                         <h3>Font Size:</h3>
                         <div class="radios">
-                            <label for="fz12"><input id="fz12" type="radio" value="12px" name="fzOpt" selected>12px</label>
+                            <label for="fz12"><input id="fz12" type="radio" value="12px" name="fzOpt">12px</label>
                             <label for="fz14"><input id="fz14" type="radio" value="14px" name="fzOpt">14px</label>
-                            <label for="fz16"><input id="fz16" type="radio" value="16px" name="fzOpt">16px</label>
+                            <label for="fz16"><input id="fz16" type="radio" value="16px" name="fzOpt" checked>16px</label>
                             <label for="fz18"><input id="fz18" type="radio" value="18px" name="fzOpt">18px</label>
                             <label for="fz20"><input id="fz20" type="radio" value="20px" name="fzOpt">20px</label>
                         </div>
@@ -57,8 +133,8 @@
                     <div class="picker picker-color">
                         <h3>Colors:</h3>
                         <div class="radios">
-                            <input type="button" name="textColor" value="Text Color">
-                            <input type="button" name="backgroundColor" value="Background Color">
+                            <input type="button" class="btn" name="textColor" value="Text Color">
+                            <input type="button" class="btn" name="backgroundColor" value="Background Color">
                         </div>
                     </div>
                     <div class="picker picker-style">
@@ -70,7 +146,6 @@
                     </div>
                 </form>
                 <div class="color-container d-none"></div>
-            </div>
         </div>
     </main>
     <script src="scripts/main.js"></script>
